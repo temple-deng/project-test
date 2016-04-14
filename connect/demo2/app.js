@@ -4,8 +4,11 @@ var parse = require('url').parse;
 var join = require('path').join;
 var app = connect();
 var Busboy = require('busboy');
+var compression = require('compression');
 
-app.use('/upload', ajaxHandler).
+var icon = require('serve-favicon');
+app.use(compression()).
+    use('/upload', ajaxHandler).
     use(staticFile).
     use(errorHandler).listen(3000);
 

@@ -1,0 +1,32 @@
+{
+  "name": "connect-tutorial",
+  "version": "1.0.0",
+  "description": "connect tutorials test",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/temple-deng/project-test.git"
+  },
+  "keywords": [
+    "connect"
+  ],
+  "author": "temple-deng",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/temple-deng/project-test/issues"
+  },
+  "homepage": "https://github.com/temple-deng/project-test#readme",
+  "devDependencies": {
+    "body-parser": "^1.15.0",
+    "busboy": "^0.2.13",
+    "compression": "^1.6.1",
+    "connect": "^3.4.1",
+    "cookie-parser": "^1.4.1",
+    "response-time": "^2.3.1",
+    "serve-favicon": "^2.3.0",
+    "serve-static": "^1.10.2"
+  }
+}
