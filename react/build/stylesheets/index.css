@@ -1,0 +1,100 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+}
+
+#container {
+    width: 1500px;
+    height: 500px;
+    margin: 200px auto;
+}
+
+#listBox {
+    margin: 0 350px;
+}
+
+.add-sec {
+    height: 80px;
+    padding: 20px;
+}
+
+.add-sec input {
+    display: inline-block;
+    width: 250px;
+    margin:20px 0 20px 10px;
+    padding: 6px;
+    border-radius: 8px 0 0 8px;
+    border: 1px solid #ccc;
+    border-right: none;
+    height: 26px;
+    outline: none;
+}
+
+.add-sec .sub-btn {
+    width: 60px;
+    text-align: center;
+    display: inline-block;
+    margin:20px 0;
+    height: 26px;
+    line-height: 26px;
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-left: none;
+    background: #66ffff;
+    cursor: pointer;
+}
+
+.list-table {
+    width: 700px;
+    min-height: 200px;
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+}
+
+.list-table th,
+.list-table td {
+    text-align: center;
+}
+
+.list-table tr th,
+.list-table tr td{
+    border: 1px solid #ccc;
+}
+
+.list-table tr:last-child th,
+.list-table tr:last-child td {
+    border-bottom: none;
+}
+
+.list-table tr {
+    height: 50px;
+}
+
+.list-table thead tr {
+    height: 40px;
+}
+
+.list-table button {
+    padding: 5px;
+    height: 38px;
+    border: 1px solid #eee;
+    border-radius: 6px;
+    background: #fff;
+    line-height: 28px;
+    margin-right: 5px;
+    outline: none;
+    cursor: pointer;
+}
+
+.list-table button:nth-child(1) {
+    background: #9ff;
+}
+
+.list-table button:nth-child(2) {
+    background: #cf6;
+}
+
+.list-table button:nth-child(3) {
+    background: #ff9;
+}
