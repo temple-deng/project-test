@@ -1,0 +1,62 @@
+.syntax {
+  margin: 50px 200px;
+  padding: 15px;
+  border: 2px solid #9cf;
+  border-radius: 15px;
+}
+
+.demo-sec {
+  margin: 50px 200px;
+  border: 2px solid #cf6;
+  border-radius: 15px;
+  padding: 15px;
+  overflow: hidden;
+}
+.demo-sec .demo,
+.demo-sec .specification {
+  width: 550px;
+  float: left;
+  padding: 50px;
+  border-radius: 10px;
+}
+.demo-sec .demo {
+  border: 2px solid #96c;
+  margin-right: 100px;
+  margin-bottom: 15px;
+}
+.demo-sec .specification {
+  border: 2px solid #39c;
+}
+
+.demo1 {
+  height: 280px;
+}
+.demo1 .box {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+  border: 2px solid #ccc;
+  box-shadow: 4px 4px #6c6;
+}
+
+.demo2 {
+  height: 280px;
+}
+.demo2 .box {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+  border: 2px solid #ccc;
+  box-shadow: 0 0 24px 0 #6c3;
+}
+
+.demo3 {
+  height: 280px;
+}
+.demo3 .box {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+  border: 2px solid #ccc;
+  box-shadow: 0 0 0 24px #6c3;
+}

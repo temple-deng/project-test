@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>box-shadow盒阴影</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <div class="syntax">
+        <div>语法部分</div>
+        <div>box-shadow: none | [inset x-offset y-offset blur-radius spread-radius color] [,inset x-offset y-offset blur-radius spread-radius color]</div>
+        <ul>
+            <li>inset: 阴影类型，可选值。如果不设置，默认投影方式是外阴影；如果取唯一值"inset"，就是设置内阴影</li>
+            <li>x-offset: 水平偏移量，正值在右边，负值在左边</li>
+            <li>y-offset:垂直偏移量，正值在下边，负值在上边</li>
+            <li>blur-radius: 模糊半径，只能是正值</li>
+            <li>spread-radius: 扩展半径，可以是正负值，正值，阴影都延展扩大，负值都缩小</li>
+        </ul>
+    </div>
+
+    <div class="demo-sec">
+        <section class="demo1">
+            <div class="demo">
+                <div class="box"></div>
+            </div>
+            <div class="specification">
+                单边阴影，只设置偏移量 <br/>
+                box-shadow: 4px 4px #6c6;
+            </div>
+        </section>
+        <section class="demo2">
+            <div class="demo">
+                <div class="box"></div>
+            </div>
+            <div class="specification">
+                单纯设置模糊半径的效果 <br/>
+                box-shadow: 0 0 24px 0 #6c3;
+            </div>
+        </section>
+        <section class="demo3">
+            <div class="demo">
+                <div class="box"></div>
+            </div>
+            <div class="specification">
+                单纯设置扩展半径的效果 <br/>
+                box-shadow: 0 0 0 24px #6c3;
+            </div>
+        </section>
+    </div>
+
+</body>
+</html>

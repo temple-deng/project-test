@@ -1,0 +1,84 @@
+.syntax {
+  margin: 50px 200px;
+  padding: 15px;
+  border: 2px solid #9cf;
+  border-radius: 15px;
+}
+
+.demo-sec {
+  margin: 50px 200px;
+  border: 2px solid #cf6;
+  border-radius: 15px;
+  padding: 15px;
+  overflow: hidden;
+}
+.demo-sec .demo,
+.demo-sec .specification {
+  width: 550px;
+  float: left;
+  padding: 50px;
+  border-radius: 10px;
+}
+.demo-sec .demo {
+  border: 2px solid #96c;
+  margin-right: 100px;
+  margin-bottom: 15px;
+}
+.demo-sec .specification {
+  border: 2px solid #39c;
+}
+
+.demo1 {
+  height: 270px;
+}
+.demo1 .box {
+  margin: 0 auto;
+  width: 200px;
+  height: 100px;
+  border: 1px solid #c03;
+  border-radius: 50px/25px;
+}
+
+.demo2 {
+  height: 270px;
+}
+.demo2 .box {
+  margin: 0 auto;
+  width: 150px;
+  height: 150px;
+  background: #cc3;
+  border-radius: 75px;
+}
+
+.demo3 {
+  height: 270px;
+}
+.demo3 .box {
+  margin: 0 auto;
+  width: 150px;
+  height: 75px;
+  background: #cc3;
+  border-radius: 75px 75px 0 0;
+}
+
+.demo4 {
+  height: 250px;
+}
+.demo4 .box {
+  margin: 0 auto;
+  width: 150px;
+  height: 150px;
+  background: #cc3;
+  border-radius: 150px 0 0 0;
+}
+
+.demo5 {
+  height: 250px;
+}
+.demo5 .box {
+  margin: 0 auto;
+  width: 150px;
+  height: 50px;
+  background: #cc3;
+  border-radius: 75px/50px;
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>border-radius圆角demo</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <div class="syntax">
+        <div>语法部分</div>
+        <div>border-radius: none | &lt;length&gt; {1,4} [/&lt;length&gt;{1,4}]?</div>
+        <div>如果/存在，则/前面的是元素圆角的水平方向半径，/后面设置的是元素圆角垂直方向的半径</div>
+        <div>也可以分开写</div>
+        <div>border-top-left-radius、border-top-right-radius、border-bottom-right-radius、border-bottom-left-radius</div>
+        <div>注意：如果要重置元素没有圆角，取值为none并无效果，需要将元素的border-radius设置0</div>
+        <div>还有一点要注意的，只有用缩写写法的border-radius时水平与垂直方向的半径用/分割，如果是分开写各个角的话，就要用空格分割</div>
+    </div>
+    <section class="demo-sec">
+        <section class="demo1">
+            <div class="demo">
+                <div class="box"></div>
+            </div>
+            <div class="specification">
+                水平半径于垂直半径不一致的demo<br />
+                border-radius: 50px/25px;
+            </div>
+        </section>
+        <section class="demo2">
+            <div class="demo">
+                <div class="box">111</div>
+            </div>
+            <div class="specification">
+                圆形的demo，重点是元素高宽相等，圆角半径等于宽的一半<br />
+                width:150px; height:150px; border-radius: 75px;
+            </div>
+        </section>
+        <section class="demo3">
+            <div class="demo">
+                <div class="box">111</div>
+            </div>
+            <div class="specification">
+                半圆形的demo，重点是元素高或宽是另一边的一半，圆角半径也只展示出想要的部分<br />
+                width:150px; height:75px; border-radius: 75px 75px 0 0;
+            </div>
+        </section>
+        <section class="demo4">
+            <div class="demo">
+                <div class="box">111</div>
+            </div>
+            <div class="specification">
+                1/4圆形的demo，重点是元素等宽高，圆角半径与宽高长度一致<br />
+                width:150px; height:150px; border-radius: 150px 0 0 0;
+            </div>
+        </section>
+        <section class="demo5">
+            <div class="demo">
+                <div class="box">111</div>
+            </div>
+            <div class="specification">
+                椭圆形的demo，重点是元素宽高不等，元素圆角水平与垂直半径也不等<br />
+                width:150px; height:50px; border-radius: 75px/50px;
+            </div>
+        </section>
+    </section>
+</body>
+</html>
