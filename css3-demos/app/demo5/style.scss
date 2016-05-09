@@ -1,0 +1,69 @@
+@mixin defaultBorder($color: #ccc) {
+  border: 2px solid $color;
+}
+
+$defaultRadius: 15px;
+
+.syntax {
+  width: 800px;
+  @include defaultBorder(#3cf);
+  margin: 75px auto;
+  padding: 25px;
+  border-radius: 15px;
+}
+
+.sections {
+  width: 1200px;
+  margin: 0 auto;
+  @include  defaultBorder(#66c);
+  border-radius: $defaultRadius;
+
+
+  section {
+    padding: 25px;
+    overflow: hidden;
+
+    .demo-sec {
+      width: 500px;
+      padding: 25px;
+      border-radius: $defaultRadius;
+      @include defaultBorder(#9f3);
+      float: left;
+    }
+    .specification {
+      float: left;
+      width: 200px;
+      min-height: 150px;
+      padding: 50px;
+      margin-left: 50px;
+      border-radius: $defaultRadius;
+      @include defaultBorder(#9fc);
+      div {
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
+
+.box {
+  width: 400px;
+  height: 100px;
+  margin: 25px auto;
+  @include defaultBorder;
+}
+
+.demo1 .box {
+  background-image: linear-gradient(to top, #6cf, #6f6);
+}
+
+.demo2 .box {
+  background-image: linear-gradient(45deg, #6cf, #90f, #96f, #9cf, #9c6, #9c3, #6f6);
+}
+
+.demo3 .box {
+  background-image: linear-gradient(90deg, #6cf 49%, #9c3 50%, #9c3 60%,#6f6 61%);
+}
+
+.demo4 .box {
+  background-image: radial-gradient(circle,#6cf,#9c3);
+}

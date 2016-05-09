@@ -1,0 +1,64 @@
+.syntax {
+  width: 800px;
+  border: 2px solid #3cf;
+  margin: 75px auto;
+  padding: 25px;
+  border-radius: 15px;
+}
+
+.sections {
+  width: 1200px;
+  margin: 0 auto;
+  border: 2px solid #66c;
+  border-radius: 15px;
+}
+.sections section {
+  padding: 25px;
+  overflow: hidden;
+}
+.sections section .demo-sec {
+  width: 500px;
+  padding: 25px;
+  border-radius: 15px;
+  border: 2px solid #9f3;
+  float: left;
+}
+.sections section .specification {
+  float: left;
+  width: 200px;
+  min-height: 150px;
+  padding: 50px;
+  margin-left: 50px;
+  border-radius: 15px;
+  border: 2px solid #9fc;
+}
+.sections section .specification div {
+  margin-bottom: 10px;
+}
+
+.box {
+  width: 400px;
+  height: 100px;
+  margin: 25px auto;
+  border: 2px solid #ccc;
+}
+
+.demo1 .box {
+  background-image: -webkit-linear-gradient(bottom, #6cf, #6f6);
+  background-image: linear-gradient(to top, #6cf, #6f6);
+}
+
+.demo2 .box {
+  background-image: -webkit-linear-gradient(45deg, #6cf, #90f, #96f, #9cf, #9c6, #9c3, #6f6);
+  background-image: linear-gradient(45deg, #6cf, #90f, #96f, #9cf, #9c6, #9c3, #6f6);
+}
+
+.demo3 .box {
+  background-image: -webkit-linear-gradient(left, #6cf 49%, #9c3 50%, #9c3 60%, #6f6 61%);
+  background-image: linear-gradient(90deg, #6cf 49%, #9c3 50%, #9c3 60%, #6f6 61%);
+}
+
+.demo4 .box {
+  background-image: -webkit-radial-gradient(circle, #6cf, #9c3);
+  background-image: radial-gradient(circle, #6cf, #9c3);
+}

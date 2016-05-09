@@ -1,0 +1,254 @@
+@mixin defaultBorder($color: #ccc) {
+  border: 2px solid $color;
+}
+
+$defaultRadius: 15px;
+
+.syntax {
+  width: 800px;
+  @include defaultBorder(#3cf);
+  margin: 75px auto;
+  padding: 25px;
+  border-radius: 15px;
+}
+
+.sections {
+  width: 1200px;
+  margin: 0 auto;
+  @include  defaultBorder(#66c);
+  border-radius: $defaultRadius;
+
+
+  section {
+    padding: 25px;
+    overflow: hidden;
+
+    .demo-sec {
+      width: 500px;
+      padding: 25px;
+      border-radius: $defaultRadius;
+      @include defaultBorder(#9f3);
+      float: left;
+    }
+    .specification {
+      float: left;
+      width: 200px;
+      min-height: 150px;
+      padding: 50px;
+      margin-left: 50px;
+      border-radius: $defaultRadius;
+      @include defaultBorder(#9fc);
+      div {
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
+
+.demo1 .box,
+.demo8 .box,
+.demo9 .box,
+.demo10 .box {
+  width: 400px;
+  height: 100px;
+  display: flex;
+  flex-direction: row-reverse;
+  margin: 25px auto;
+  @include defaultBorder;
+  div:nth-child(1) {
+    width: 60px;
+    background: #cf6;
+  }
+  div:nth-child(2) {
+    width: 60px;
+    background: #cfc;
+  }
+  div:nth-child(3) {
+    width: 60px;
+    background: #ccf;
+  }
+  div:nth-child(4) {
+    width: 60px;
+    background: #ff9;
+  }
+}
+
+.demo2 .box {
+  width: 400px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  margin: 25px auto;
+  @include defaultBorder;
+  div:nth-child(1) {
+    background: #cf6;
+  }
+  div:nth-child(2) {
+    background: #cfc;
+  }
+  div:nth-child(3) {
+    background: #ccf;
+  }
+  div:nth-child(4) {
+    background: #ff9;
+  }
+}
+
+.demo3 .box,
+.demo4 .box {
+  width: 400px;
+  height: 200px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  margin: 25px auto;
+  @include defaultBorder;
+  div:nth-child(1), div:nth-child(5) {
+    width: 80px;
+    background: #cf6;
+  }
+  div:nth-child(2), div:nth-child(6) {
+    width: 80px;
+    background: #cfc;
+  }
+  div:nth-child(3), div:nth-child(7) {
+    width: 80px;
+    background: #ccf;
+  }
+  div:nth-child(4), div:nth-child(8) {
+    width: 80px;
+    background: #ff9;
+  }
+}
+
+.demo4 .box {
+  flex-wrap: wrap-reverse;
+}
+
+.demo5 .box {
+  width: 400px;
+  height: 130px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin: 25px auto;
+  @include defaultBorder;
+  div:nth-child(1) {
+    width: 50px;
+    background: #cf6;
+    height: 100px;
+  }
+  div:nth-child(2) {
+    width: 50px;
+    height: 120px;
+    background: #cfc;
+  }
+  div:nth-child(3) {
+    width: 50px;
+    height: 60px;
+    background: #ccf;
+  }
+  div:nth-child(4) {
+    width: 50px;
+    background: #ff9;
+  }
+}
+
+.demo5 {
+  .box2 {
+    justify-content: flex-end;
+  }
+  .box3 {
+    justify-content: center;
+  }
+  .box4 {
+    justify-content: space-between;
+  }
+  .box5 {
+    justify-content: space-around;
+  }
+}
+
+.demo6 .box,
+.demo7 .box {
+  width: 400px;
+  height: 130px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  margin: 25px auto;
+  @include defaultBorder;
+  div:nth-child(1) {
+    width: 50px;
+    background: #cf6;
+    height: 100px;
+  }
+  div:nth-child(2) {
+    width: 50px;
+    height: 120px;
+    background: #cfc;
+  }
+  div:nth-child(3) {
+    width: 50px;
+    height: 60px;
+    background: #ccf;
+  }
+  div:nth-child(4) {
+    width: 50px;
+    background: #ff9;
+  }
+}
+
+.demo6, .demo7 {
+  .box2 {
+    align-items: flex-end;
+  }
+  .box3 {
+    align-items: center;
+  }
+  .box4 {
+    align-items: baseline;
+  }
+  .box5 {
+    align-items: stretch;
+    div:nth-child(2) {
+      align-self: stretch;
+    }
+  }
+}
+
+.demo7 > div {
+  div:nth-child(2) {
+    align-self: flex-end;
+  }
+}
+
+.demo8 .box {
+  flex-direction: row;
+  div:nth-child(1) {
+    flex-grow: 1;
+  }
+  div:nth-child(3) {
+    flex-grow: 2;
+  }
+}
+
+.demo9 .box {
+  flex-direction: row;
+  div {
+    width: 120px !important;
+  }
+  div:nth-child(2) {
+    flex-shrink: 0;
+  }
+}
+
+.demo10 .box {
+  flex-direction: row;
+  div {
+    flex-grow: 1;
+  }
+  div:nth-child(2) {
+    flex-basis: 120px;
+  }
+}

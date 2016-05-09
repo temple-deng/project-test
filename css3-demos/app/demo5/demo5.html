@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>渐变</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <div class="syntax">
+        <div>语法部分</div>
+        <div>linear-gradient([[&lt;angle&gt; | to &lt;side or corner&gt;],]?&lt;color-stop&gt;[,&lt;color-stop&gt;]+)</div>
+        <div>包括3个主要参数，第一个参数指定渐变的方向，同时决定渐变颜色的停止位置。这个参数值可以省略，当省略时其取值为to bottom。在决定渐变方向时有两种方法</div>
+        <div>angle: 通过角度，0度表示从下到上，90度表示从左到右</div>
+        <div>关键词，比如"to top", "to right", "to bottom", "to left"</div>
+        <div>径向渐变</div>
+        <div>radial-gradient([[&lt;shape&gt; || &lt;size&gt;] [at &lt;position&gt;]?, | at &lt;position&gt;,] &lt;color-stop&gt;[,&lt;color-stop&gt;]+)</div>
+        <div>position 主要用来定义渐变圆心的位置，默认值是center,值可以是length，percentage，也可以是left等关键字</div>
+        <div>shape 定义渐变的形状，包括两个值，circle和ellipse</div>
+        <div>circle，如果size和length大小相等，径向渐变时圆形， ellipse，大小不等就是椭圆形</div>
+        <div>size 用来确定径向渐变结束形状大小，默认值是farthest-corner.可以显示设置关键词：closest-side, closest-corner, farthest-side, farthest-corner</div>
+    </div>
+
+    <div class="sections">
+        <section>
+            <div class="demo-sec demo1">
+                demo1
+                <div class="box"></div>
+            </div>
+            <div class="specification">
+                从下到上 <br/>
+                background-image: linear-gradient(0deg, #6cf, #6f6);<br />
+                background-image: linear-gradient(to top, #6cf, #6f6);
+            </div>
+        </section>
+
+        <section>
+            <div class="demo-sec demo2">
+                demo2
+                <div class="box"></div>
+            </div>
+            <div class="specification">
+                多色渐变 <br/>
+                background-image: linear-gradient(45deg, #6cf, #90f, #96f, #9cf, #9c6, #9c3, #6f6);
+            </div>
+        </section>
+
+        <section>
+            <div class="demo-sec demo3">
+                demo3
+                <div class="box"></div>
+            </div>
+            <div class="specification">
+                自定义渐变 <br/>
+                background-image: linear-gradient(90deg, #6cf 49%, #9c3 50%, #9c3 60%,#6f6 61%);
+            </div>
+        </section>
+
+        <section>
+            <div class="demo-sec demo4">
+                demo4
+                <div class="box"></div>
+            </div>
+            <div class="specification">
+                自定义渐变 <br/>
+                background-image: linear-gradient(90deg, #6cf 49%, #9c3 50%, #9c3 60%,#6f6 61%);
+            </div>
+        </section>
+    </div>
+</body>
+</html>

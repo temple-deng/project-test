@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>背景属性</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <div class="syntax">
+        <div>语法部分</div>
+        <div>background-color: transparent || &lt;color&gt; </div>
+        <div>background-image: none || &lt;url&gt; </div>
+        <div>background-repeat: repeat || repeat-x || repeat-y || no-repeat </div>
+        <div>background-position: &lt;percentage&gt; || &lt;length&gt; || [left|center|right][,top|center|bottom] </div>
+        <div>background-origin: padding-box || border-box || content-box</div>
+        <div>背景图的起始点，默认是padding-box, 从padding的外边缘开始</div>
+        <div>background-size: auto || &lt;length&gt; || &lt;percentage&gt; || cover || contain</div>
+        <div>当这个值取百分比时，计算时是根据元素的宽度+padding来计算的，而不是背景图的宽</div>
+    </div>
+
+    <div class="sections">
+        <section>
+            <div class="demo-sec demo1">
+                <div class="box">111</div>
+            </div>
+            <div class="specification">
+                background-position: left | left center | 0% 50%
+            </div>
+        </section>
+        <section>
+            <div class="demo-sec demo2">
+                <div class="box">111</div>
+            </div>
+            <div class="specification">
+                background-position: right bottom |  100% 100%
+            </div>
+        </section>
+        <section>
+            <div class="demo-sec demo3">
+                <div class="box">111</div>
+            </div>
+            <div class="specification">
+                background-origin: padding-box
+            </div>
+        </section>
+        <section>
+            <div class="demo-sec demo4">
+                <div class="box">111</div>
+            </div>
+            <div class="specification">
+                background-origin: border-box
+            </div>
+        </section>
+        <section>
+            <div class="demo-sec demo5">
+                <div class="box">111</div>
+            </div>
+            <div class="specification">
+                background-origin: content-box
+            </div>
+        </section>
+        <section>
+            <div class="demo-sec demo6">
+                <div class="box">111</div>
+            </div>
+            <div class="specification">
+                background-size: 130px 130px;
+            </div>
+        </section>
+        <section>
+            <div class="demo-sec demo7">
+                <div class="box">111</div>
+            </div>
+            <div class="specification">
+                background-size: 160px;
+                一个值的话即设定了背景图的宽，此时的高为auto,会根据宽的比例调整
+            </div>
+        </section>
+        <section>
+            <div class="demo-sec demo8">
+                <div class="box">111</div>
+            </div>
+            <div class="specification">
+                background-size: cover;
+            </div>
+        </section>
+        <section>
+            <div class="demo-sec demo9">
+                <div class="box">111</div>
+            </div>
+            <div class="specification">
+                background-size: contain;
+            </div>
+        </section>
+    </div>
+</body>
+</html>

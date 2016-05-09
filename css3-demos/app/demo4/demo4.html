@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>flex布局</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <div class="syntax">
+        <div>语法部分</div>
+        <div>display: flex | inline-flex 设置容器为伸缩容器</div>
+        <div>flex-direction: row(默认值) | row-reverse | column | column-reverse</div>
+        <div>伸缩流的方向</div>
+        <div>flex-wrap: nowrap(默认值) | wrap | wrap-reverse </div>
+        <div>伸缩换行，主要用来定义伸缩容器里的伸缩项目是否换行，注意如果定义了不换行，此时在伸缩项目在伸缩方向的宽度会自动调整到刚好放下，设置的宽度会实现</div>
+        <div>flex-flow: &lt;'flex-direction'&gt; || &lt;'flex-wrap'&gt;</div>
+        <div>两个属性值的并写，默认值是row nowrap</div>
+        <div>justify-content: flex-start(默认值) | flex-end | center | space-between | space-around</div>
+        <div>主轴对齐</div>
+        <div>align-items: flex-start | flex-end | center | baseline | stretch(默认值)</div>
+        <div>align-self</div>
+        <div>上面两个都是设置侧轴对齐的属性，不过align-self是设置在伸缩项目上，用来覆盖容器上的设置,但是貌似在侧轴方向上设置了宽度，stretch并不起作用</div>
+        <div>伸缩项目上的属性</div>
+        <div>flex: none | [&lt;'flex-grow'&gt; &lt;'flex-shrink'&gt;?] || &lt;'flex-basis'&gt; ]</div>
+        <div>
+            伸缩性，当一个元素是伸缩项目时，flex属性将代替主轴长度属性决定元素的主轴长度。
+        </div>
+        <div>
+            flex-grow: &lt;number&gt; 默认值是0     flex-shrink: &lt;number&gt; 默认值是1
+        </div>
+        <div>grow设置的是当主轴方向有额外空余的位置时如何分割额外的位置，当只有一个元素设置为1时，则这个元素宽度等于自身宽度加额外位置的宽度</div>
+        <div>shrink设置的是当主轴方向伸缩项目的长度超出容器的长度，应该将伸缩项目伸缩的比例，默认是1，就是等比例的缩减，如果将一个项目设为0，则其不会缩减</div>
+        <div>flex-basis是指当有多余长度时，在进行分配多余长度前，设定的伸缩项目在主轴占用的长度，默认是auto，就是元素本来的宽度</div>
+        <div>flex属性的默认值是 0 1 auto，有两个快捷值auto(1 1 auto)和none(0 0 auto)</div>
+        <div>order: &lt;number&gt;</div>
+        <div>显示顺序</div>
+    </div>
+    <div class="sections">
+        <section>
+            <div class="demo-sec demo1">
+                demo1
+                <div class="box">
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                    <div>4</div>
+                </div>
+            </div>
+            <div class="specification">
+                .box { display: flex; flex-direction: row-reverse;}
+            </div>
+        </section>
+        <section>
+            <div class="demo-sec demo2">
+                demo2
+                <div class="box">
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                    <div>4</div>
+                </div>
+            </div>
+            <div class="specification">
+                .box { display: flex; flex-direction: column;}
+            </div>
+        </section>
+        <section>
+            <div class="demo-sec demo3">
+                demo3
+                <div class="box">
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                    <div>4</div>
+                    <div>5</div>
+                    <div>6</div>
+                    <div>7</div>
+                    <div>8</div>
+                </div>
+            </div>
+            <div class="specification">
+                .box { display: flex; flex-direction: row; flex-wrap: nowrap;}
+                注意这里设置的item的width是80px，但实际上是50px
+            </div>
+        </section>
+        <section>
+            <div class="demo-sec demo4">
+                demo4
+                <div class="box">
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                    <div>4</div>
+                    <div>5</div>
+                    <div>6</div>
+                    <div>7</div>
+                    <div>8</div>
+                </div>
+            </div>
+            <div class="specification">
+                .box { display: flex; flex-direction: row; flex-wrap: wrap-reverse;}
+            </div>
+        </section>
+        <section>
+            <div class="demo-sec demo5">
+                demo5
+                <div class="box box1">
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                    <div>4</div>
+                </div>
+                <div class="box box2">
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                    <div>4</div>
+                </div>
+                <div class="box box3">
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                    <div>4</div>
+                </div>
+                <div class="box box4">
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                    <div>4</div>
+                </div>
+                <div class="box box5">
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                    <div>4</div>
+                </div>
+            </div>
+            <div class="specification">
+                <div>.box1 { justify-content: flex-start; }</div>
+                <div>.box2 { justify-content: flex-end; }</div>
+                <div>.box3 { justify-content: center; }</div>
+                <div>.box4 { justify-content: space-between; }</div>
+                <div>.box5 { justify-content: space-around; }</div>
+            </div>
+        </section>
+        <section>
+            <div class="demo-sec demo6">
+                demo6
+                <div class="box box1">
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                    <div>4</div>
+                </div>
+                <div class="box box2">
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                    <div>4</div>
+                </div>
+                <div class="box box3">
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                    <div>4</div>
+                </div>
+                <div class="box box4">
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                    <div>4</div>
+                </div>
+                <div class="box box5">
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                    <div>4</div>
+                </div>
+            </div>
+            <div class="specification">
+                <div>.box1 { align-items: flex-start; }</div>
+                <div>.box2 { align-items: flex-end; }</div>
+                <div>.box3 { align-items: center; }</div>
+                <div>.box4 { align-items: baseline; }</div>
+                <div>.box5 { align-items: stretch; }</div>
+            </div>
+        </section>
+        <section>
+            <div class="demo-sec demo7">
+                demo7
+                <div class="box box1">
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                    <div>4</div>
+                </div>
+                <div class="box box2">
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                    <div>4</div>
+                </div>
+                <div class="box box3">
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                    <div>4</div>
+                </div>
+                <div class="box box4">
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                    <div>4</div>
+                </div>
+                <div class="box box5">
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                    <div>4</div>
+                </div>
+            </div>
+            <div class="specification">
+                <div>每个容器里的第二个伸缩项目 align-self:flex-end</div>
+            </div>
+        </section>
+
+        <section>
+            <div class="demo-sec demo8">
+                demo8
+                <div class="box">
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                    <div>4</div>
+                </div>
+            </div>
+            <div class="specification">
+                div1 flex-grow:1 <br/>
+                div3 flex-grow:2
+            </div>
+        </section>
+
+        <section>
+            <div class="demo-sec demo9">
+                demo9
+                <div class="box">
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                    <div>4</div>
+                </div>
+            </div>
+            <div class="specification">
+                div2 flex-shrink:0
+            </div>
+        </section>
+
+        <section>
+            <div class="demo-sec demo10">
+                demo10
+                <div class="box">
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                    <div>4</div>
+                </div>
+            </div>
+            <div class="specification">
+                div flex-grow:1
+                div2 flex-basis:120px
+                所以 box width 400px-120px-3*60px=100px
+                100px/4=25px, 所以div2 width 120+25px
+            </div>
+        </section>
+    </div>
+</body>
+</html>

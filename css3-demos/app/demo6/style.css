@@ -1,0 +1,64 @@
+table {
+  border: 2px solid #ccc;
+  border-collapse: collapse; }
+  table td {
+    border: 1px solid #ccc; }
+
+.syntax {
+  width: 800px;
+  border: 2px solid #3cf;
+  margin: 75px auto;
+  padding: 25px;
+  border-radius: 15px; }
+
+.sections {
+  width: 1200px;
+  margin: 0 auto;
+  border: 2px solid #66c;
+  border-radius: 15px; }
+  .sections section {
+    padding: 25px;
+    overflow: hidden; }
+    .sections section .demo-sec {
+      width: 500px;
+      padding: 25px;
+      border-radius: 15px;
+      border: 2px solid #9f3;
+      float: left; }
+    .sections section .specification {
+      float: left;
+      width: 200px;
+      min-height: 150px;
+      padding: 50px;
+      margin-left: 50px;
+      border-radius: 15px;
+      border: 2px solid #9fc; }
+      .sections section .specification div {
+        margin-bottom: 10px; }
+
+.box {
+  width: 140px;
+  height: 100px;
+  margin: 25px auto;
+  border: 2px solid #ccc;
+  background: #9cf; }
+
+.demo1 .box {
+  transform: rotate(-45deg); }
+
+.demo2 .box {
+  transform: perspective(800px) rotateX(45deg) rotateY(45deg); }
+
+.demo3 .box {
+  transform: translate(-100px, 100px); }
+
+.demo4 .box {
+  transform: perspective(800px) translate(-100px, 100px) translateZ(-100px); }
+
+.demo5 .box {
+  transform: scale(1.2, -0.8); }
+
+.demo6 .box {
+  transform: skew(10deg); }
+
+/*# sourceMappingURL=style.css.map */

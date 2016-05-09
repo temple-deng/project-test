@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>CSS变形</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <div class="syntax">
+        <div>语法部分</div>
+        <div>
+            基础内容 <br/>
+            transform: none | &lt;transform-function&gt; [&lt;transform-function&gt;]*<br/>
+            transform属性能对元素对象进行变形操作，主要包括以下几种：旋转rotate、缩放scale、移动translate、倾斜skew以及矩阵变形matrix。<br/><br/>
+            transform-origin: [ [ &lt;percentage&gt; | &lt;length&gt; | left | center | right ] [ &lt;percentage&gt; | &lt;length&gt; | top | center | bottom ]? ] |
+                              [ [ left | center | right ] || [ top | center | bottom ] ] <br/>
+            transform的参照点默认为元素的中心点，如果要改变这个参照点，可以是用transform-origin属性进行自定义。<br/>
+            受影响变形函数：rotate()。<br/>
+            该属性提供2个参数值，第一个用于横坐标，第二个用于纵坐标；如果只提供一个，该值将用于横坐标，纵坐标将默认为50%。<br/> <br/>
+
+            transform-style: flat | preserve-3d <br/>
+            设置内嵌的元素在 3D 空间如何呈现。有两个值：flat：所有子元素在 2D 平面呈现。preserve-3d：保留3D空间。<br/> <br/>
+            perspective-origin 语法同 transform-origin <br/>
+            perspective-origin属性定义在X轴和Y轴的3D元素。这个属性允许你改变3D元素的底部位置。定义时的perspective-origin属性，它是一个元素的子元素，透视图，而不是元素本身。
+            提示：使用此属性必须和perspective属性一起使用，只影响3D转换的元素！ <br/>
+            受影响变形函数：perspective()。 <br/> <br/>
+            backface-visibility: visible | hidden <br/>
+            backface-visibility 属性可用于隐藏内容的背面。默认情况下，背面可见，这意味着即使在翻转后，变换的内容仍然可见。但当 backface-visibility 设置为 hidden 时，旋转后内容将隐藏，因为旋转后正面将不再可见。<br/><br/>
+
+            <table>
+                <tr>
+                    <td colspan="2">变形函数</td>
+                </tr>
+                <tr>
+                    <td>rotate</td>
+                    <td>&lt;angle&gt;</td>
+                </tr>
+                <tr>
+                    <td>单位</td>
+                    <td>角度值deg，弧度值rad，梯度gard，转/圈turn, 角度值deg可以为正数或者负数，正数是顺时针旋转，负数是逆时针旋转。</td>
+                </tr>
+                <tr>
+                    <td>说明</td>
+                    <td>rotate()函数能够旋转元素，它主要是在二维空间内进行操作，通过一个角度参数值，来设定旋转的幅度。
+                        如果对元素本身或者元素设置了perspective值，那么rotate3d()函数可以实现一个3维空间内的旋转。</td>
+                </tr>
+                <tr>
+                    <td>3d</td>
+                    <td>rotateX rotateY rotateZ</td>
+                </tr>
+                <tr>
+                    <td colspan="2">位移函数</td>
+                </tr>
+                <tr>
+                    <td>translate</td>
+                    <td>
+                        (&lt;translation-value&gt;[, &lt;translation-value&gt]);
+                    </td>
+                </tr>
+                <tr>
+                    <td>说明</td>
+                    <td>包含两个参数，如果省略了第二个参数则第二个参数为0；如果参数为负，则表示往相反的方向移动。不同于rotate,translateX,translateY可以作用于2d变换</td>
+                </tr>
+                <tr>
+                    <td>3d</td>
+                    <td>translateX translateY translateZ, translateZ正值贴近视角，负值远离</td>
+                </tr>
+                <tr>
+                    <td colspan="2">缩放函数</td>
+                </tr>
+                <tr>
+                    <td>scale</td>
+                    <td>(&lt;number&gt;[, &lt;number&gt;]); </td>
+                </tr>
+                <tr>
+                    <td>说明</td>
+                    <td>
+                        表示使元素在X轴和Y轴同时缩放。number表示缩放倍数，可以是正数，负数和小数。
+                        负数是先翻转元素然后再缩放。包含两个参数，如果缺少第二个参数，那么第二个参数的值等于第一个参数。
+                    </td>
+                </tr>
+                <tr>
+                    <td>3d</td>
+                    <td>
+                        scaleX, scaleY, scaleZ
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">倾斜函数</td>
+                </tr>
+                <tr>
+                    <td>skew</td>
+                    <td>
+                        (&lt;angle&gt; [,&lt;angle&gt;])
+                    </td>
+                </tr>
+                <tr>
+                    <td>说明</td>
+                    <td>
+                        包含两个参数值，分别表示X轴和Y轴倾斜的角度，如果第二个参数为空，则默认为0，参数为负表示向相反方向倾斜。
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="sections">
+        <section>
+            <div class="demo-sec demo1">
+                <div class="box">
+                    逆时针旋转45deg
+                </div>
+            </div>
+            <div class="specification">
+                transform: rotate(-45deg);<br/>
+                注意变换中心是center center
+            </div>
+        </section>
+        <section>
+            <div class="demo-sec demo2">
+                <div class="box">
+                    3d变换 X轴45deg,Y轴45deg
+                </div>
+            </div>
+            <div class="specification">
+                transform: perspective(800px) rotateX(45deg) rotateY(45deg);<br/>
+            </div>
+        </section>
+        <section>
+            <div class="demo-sec demo3">
+                <div class="box">
+                    x:-100px y:100px
+                </div>
+            </div>
+            <div class="specification">
+                transform: translate(-100px,100px)<br/>
+            </div>
+        </section>
+        <section>
+            <div class="demo-sec demo4">
+                <div class="box">
+                    x:-100px y:100px，z:-100px
+                </div>
+            </div>
+            <div class="specification">
+                transform: perspective(800px) translate(-100px,100px) translateZ(-100px);
+            </div>
+        </section>
+        <section>
+            <div class="demo-sec demo5">
+                <div class="box">
+                    scaleX(1.2) scaleY(-0.8)
+                </div>
+            </div>
+            <div class="specification">
+                transform: scale(1.2, -0.8);
+            </div>
+        </section>
+        <section>
+            <div class="demo-sec demo6">
+                <div class="box">
+                    transform: skew(10deg);
+                </div>
+            </div>
+            <div class="specification">
+                transform: skew(10deg);
+            </div>
+        </section>
+
+    </div>
+</body>
+</html>
