@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>第四章：字体排印</title>
+    <link rel="stylesheet" href="chapter4.css"/>
+</head>
+<body>
+    <header>
+        第四章：字体排印 <br/>
+        东西不多，放一起写了
+    </header>
+
+    <div class="main">
+
+        <!----------------第一个例子：插入断行----------->
+        <table class="table1 table">
+            <thead>
+                <tr>
+                    <td colspan="2">字体排印</td>
+                </tr>
+            </thead>
+            <tbody  class="demo-sec">
+                <tr class="demo1">
+                    <td class="effect-td">
+                        <div class="effect">
+                            <dl>
+                                <dt>Name : </dt>
+                                <dd>Lea Verou</dd>
+
+                                <dt>Email : </dt>
+                                <dd>lea@verou.me</dd>
+                                <dd>leaverou@mit.me</dd>
+
+                                <dt>Location : </dt>
+                                <dd>Earth</dd>
+                            </dl>
+                        </div>
+                    </td>
+                    <td class="specification">
+                        第一个例子：文本换行 <br/>
+                        在CSS中 "\A"是表示换行符的，但是光有换行符还是不够，因为html默认会合并空白符，
+                        所以需要禁止空白符的合并。 <br/>
+                        dd + dt::before { <br/>
+                        content: '\A'; <br/>
+                        white-space: pre; <br/>
+                        }
+                    </td>
+                </tr>
+
+                <tr class="demo2">
+                    <td class="effect-td">
+                        <div class="effect">
+                            while(true) { <br/>
+                            &nbsp;&nbsp; var d = new Date(); <br/>
+                            &nbsp;&nbsp; if(d.getDate()==1 && <br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp; d.getMonth()==3) { <br/>
+                            &nbsp;&nbsp; alert('heheda'); <br/>
+                            &nbsp;&nbsp; } <br/>
+                            }
+                        </div>
+                    </td>
+                    <td class="specification">
+                        第二个例子：文本行的斑马纹效果，用渐变实现 <br/>
+                        <img src="chapter2-code-images/code11.png" alt=""/>
+                    </td>
+                </tr>
+
+                <tr class="demo3">
+                    <td class="effect-td">
+                        <div class="effect">
+                            "The only way to <span>get rid of temptation is to </span>yield to it."
+                        </div>
+                    </td>
+                    <td class="specification">
+                        第三个例子，自定义下划线，也是用渐变实现，实现一个1px高的背景渐变图，然后定位在字体下方，
+                        为了防止字体穿透下划线，可以用文本阴影来抵消效果<br/>
+                        <img src="chapter2-code-images/code12.png" alt=""/> <br/>
+                        chrome下好像显示有问题，渐变图定位的太过靠下消失了。
+                    </td>
+                </tr>
+
+
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="2"></td>
+                </tr>
+            </tfoot>
+        </table>
+
+
+
+        <!----------------第二个例子：现实中的文字效果----------->
+        <table class="table2 table">
+            <thead>
+            <tr>
+                <td colspan="2">现实中的文字效果</td>
+            </tr>
+            </thead>
+            <tbody  class="demo-sec">
+            <tr class="demo1">
+                <td class="effect-td">
+                    <div class="effect">
+                        "The only way to get rid of temptation is to yield to it."
+                    </div>
+                </td>
+                <td class="specification">
+                    凸版印刷效果：当我们在浅色背景上使用深色文字时，在底部加上浅色投影效果最佳。
+                    <img src="chapter2-code-images/code13.png" alt=""/>
+                </td>
+            </tr>
+
+            <tr class="demo2">
+                <td class="effect-td">
+                    <div class="effect">
+                       CSS
+                    </div>
+                </td>
+                <td class="specification">
+                    空心字效果，理论上应该用文本阴影的扩张半径来实现，但是这个参数浏览器的支持程度不佳， 所以可以用多重阴影的效果来实现，
+                    不过这种方式在描边的宽度比较大时，显示效果也不佳，最理想的方案是SVG，这里只列举多重阴影的效果。<br/>
+                    text-shadow:2px 0 #000, -2px 0 #000, 0 2px #000, 0 -2px #000;
+                </td>
+            </tr>
+
+
+            </tbody>
+            <tfoot>
+            <tr>
+                <td colspan="2"></td>
+            </tr>
+            </tfoot>
+        </table>
+    </div>
+</body>
+</html>

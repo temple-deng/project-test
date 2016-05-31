@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>第三章：视觉效果</title>
+    <link rel="stylesheet" href="chapter3.css"/>
+</head>
+<body>
+    <header>
+        第三章：视觉效果
+    </header>
+
+    <div class="main">
+
+        <!----------------第一个例子：单侧投影----------->
+        <table class="table1 table">
+            <thead>
+                <tr>
+                    <td colspan="2">单侧投影和邻边投影</td>
+                </tr>
+            </thead>
+            <tbody  class="demo-sec">
+                <tr class="demo1">
+                    <td class="effect-td">
+                        <div class="effect">
+                            <div class="box1"></div>
+                            <div class="box2"></div>
+                            <div class="box3"></div>
+                            <div class="box4"></div>
+                        </div>
+                    </td>
+                    <td class="specification">
+                        以 box-shadow: 2px 3px 4px rgba(0,0,0,.5)  为例<br/>
+                        下面的步骤很好地（技术上不够严谨）讲解了投影如何绘制的： <br/>
+                        (1) 以该元素相同的尺寸和位置，画一个rgba(0,0,0,.5)的矩形 <br/>
+                        (2) 把它向右移2px,向下移3px。 <br/>
+                        (3) 使用高斯模糊算法（或类似算法）将它进行4px的模糊处理。这在本质上表示在阴影边缘发生阴影色和纯透明色之间的
+                            颜色过渡长度近似于模糊半径的两倍。（比如这里是8px） <br/>
+                        (4) 接下来, 模糊后的矩形与原始元素的交集部分会被切除掉，因此它看起来像是在该元素的“后面”。 <br/>
+
+                        使用4px的模糊半径意味着投影的尺寸会比元素本身的尺寸大约8px，因此投影的最外圈会从元素的四面向外显露出来。（确切的说，我们将在顶部看到1px的投影、在
+                        左侧看到2px、在右侧看到6px、在底部看到7px。在实践中，投影看起来会比这些值稍小，因为投影的颜色在边缘处的过渡不是线性的，这跟渐变不一样）
+                    </td>
+                </tr>
+
+                <tr class="demo2">
+                    <td class="effect-td">
+                        <div class="effect"></div>
+                    </td>
+                    <td class="specification">
+                        如果我们应用一个负的扩张半径，而它的值刚好等于模糊半径，那么投影的尺寸就会与投影所属元素的尺寸完全一致。
+                        除非用偏移半径来移动它，我们将完全看不到任何投影。 <br/>
+                        box-shadow : 0 5px 4px -4px black;
+                    </td>
+                </tr>
+
+                <tr class="demo3">
+                    <td class="effect-td">
+                        <div class="effect"></div>
+                    </td>
+                    <td class="specification">
+                        邻边投影需要对上面的技巧进行调整。 br
+                        扩张半径不应设为模糊半径的相反值，而这应该是这个相反值的一半 <br/>
+                        需要指定两个偏移量，因此我们希望投影在水平和垂直方向上同时移动。它们的值需要大于或等于模糊半径的一半。 <br/>
+                        box-shadow: 7px 7px 10px -5px #000000;
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="2"></td>
+                </tr>
+            </tfoot>
+        </table>
+
+        <!----------------第二个例子：不规则投影----------->
+        <table class="table2 table">
+            <thead>
+                <tr>
+                    <td colspan="2">不规则投影</td>
+                </tr>
+            </thead>
+            <tbody  class="demo-sec">
+                <tr class="demo1">
+                    <td class="effect-td">
+                        <div class="effect">
+                        </div>
+                    </td>
+                    <td class="specification">
+                        drop-shadow()滤镜可接受的参数基本上跟box-shadow属性一样的，但不包括扩张半径，不包括
+                        inset关键字，也不支持逗号分隔的多层投影语法。 <br/>
+                        -webkit-filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, .5)); <br/>
+                        filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, .5));
+                    </td>
+                </tr>
+
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="2">
+                        注意filter效果在谷歌下需要在私有前缀
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+
+        <!----------------第三个例子：折角效果----------->
+        <table class="table3 table">
+            <thead>
+                <tr>
+                    <td colspan="2">折角效果</td>
+                </tr>
+            </thead>
+            <tbody  class="demo-sec">
+                <tr class="demo1">
+                    <td class="effect-td">
+                        <div class="effect">
+
+                        </div>
+                    </td>
+                    <td class="specification">
+                       第一种效果就是使用渐变。 <br/>
+                        background: #58a; <br/>
+                        background: linear-gradient(to left bottom, transparent 2em, rgba(0,0,0,.4) 0) no-repeat right top / 2.82em 2.82em,
+                        <br/>
+                        linear-gradient(-135deg, transparent 2em, #58a 0);
+                    </td>
+                </tr>
+
+                <tr class="demo2">
+                    <td class="effect-td">
+                        <div class="effect">
+
+                        </div>
+                    </td>
+                    <td class="specification">
+                        第二种和上面的一样还是渐变，但事实上这样的折角是不科学的。
+                    </td>
+                </tr>
+
+                <tr class="demo3">
+                    <td class="effect-td">
+                        <div class="effect">
+
+                        </div>
+                    </td>
+                    <td class="specification">
+                        使用伪元素来实现第二层渐变，并进行动画的翻转，移动。
+                        <img src="chapter2-code-images/code10.png" alt=""/>
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="2">
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</body>
+</html>

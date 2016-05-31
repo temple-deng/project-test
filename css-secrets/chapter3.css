@@ -1,0 +1,165 @@
+header {
+    width : 1000px;
+    height: 40px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 2px solid #eee;
+    border-radius: 20px;
+    line-height: 40px;
+}
+
+.main {
+    width: 1400px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 2px solid #eee;
+    border-radius: 20px;
+}
+
+.table {
+    width: 100%;
+    border: 2px solid #ccf;
+    border-radius: 15px;
+    border-collapse: collapse;
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.table td {
+    border: 1px solid #ccf;
+    vertical-align: middle;
+    padding: 20px;
+    width: 50%;
+}
+
+.table .specification {
+    text-align: left;
+    line-height: 1.4;
+}
+
+
+/* 单侧投影 */
+.table1 tbody .demo1 .effect > div {
+    display: inline-block;
+    width: 20%;
+    height: 130px;
+    margin-right: 20px;
+}
+
+.table1 tbody .demo1 .effect .box1 {
+    background: #000;
+}
+
+.table1 tbody .demo1 .effect .box2 {
+    background: #fb3;
+    position: relative;
+}
+
+.table1 tbody .demo1 .effect .box2::before {
+    position: absolute;
+    top: 6px;
+    left: 8px;
+    width: 100%;
+    height: 100%;
+    content: '';
+    background: #000;
+}
+
+.table1 tbody .demo1 .effect .box3 {
+    background: #fb3;
+    position: relative;
+}
+
+.table1 tbody .demo1 .effect .box3::before {
+    position: absolute;
+    top: 6px;
+    left: 8px;
+    width: 99%;
+    height: 99%;
+    box-shadow: 0 0 20px 4px rgba(0, 0, 0, .5);
+    content: '';
+    background: #000;
+}
+
+.table1 tbody .demo1 .effect .box4 {
+    background: #fb3;
+    position: relative;
+}
+
+.table1 tbody .demo1 .effect .box4::before {
+    position: absolute;
+    top: 6px;
+    left: 8px;
+    width: 94%;
+    height: 95%;
+    box-shadow: 0 0 20px 4px rgba(0, 0, 0, .5);
+    content: '';
+    background: #000;
+    z-index: -1;
+}
+
+.table1 tbody .demo2 .effect {
+    width: 150px;
+    height: 150px;
+    display: inline-block;
+    background: #fb3;
+    box-shadow: 0 6px 4px -4px #000000;
+}
+
+.table1 tbody .demo3 .effect {
+    width: 150px;
+    height: 150px;
+    display: inline-block;
+    background: #fb3;
+    box-shadow: 7px 7px 10px -5px #000000;
+}
+
+/* 不规则投影 */
+.table2 tbody .demo1 .effect {
+    width: 150px;
+    height: 150px;
+    display: inline-block;
+    border: 10px dotted #fb3;
+    -webkit-filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, .5));
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, .5));
+}
+
+/* 折角效果 */
+.table3 tbody .demo1 .effect {
+    width: 150px;
+    height: 150px;
+    display: inline-block;
+    background: #58a;
+    background: linear-gradient(to left bottom, transparent 2em, rgba(0,0,0,.4) 0) no-repeat right top / 2.82em 2.82em,
+                linear-gradient(-135deg, transparent 2em, #58a 0);
+}
+
+.table3 tbody .demo2 .effect {
+    width: 150px;
+    height: 150px;
+    display: inline-block;
+    background: #58a;
+    background: linear-gradient(to left bottom, transparent 50%, rgba(0,0,0,.4) 0) no-repeat right top / 3em 1.72em,
+                linear-gradient(-150deg, transparent 1.5em, #58a 0);
+}
+
+.table3 tbody .demo3 .effect {
+    width: 150px;
+    height: 150px;
+    display: inline-block;
+    position: relative;
+    background: #58a;
+    background: linear-gradient(-150deg, transparent 1.5em, #58a 0);
+}
+
+.table3 tbody .demo3 .effect::before{
+    position: absolute;
+    width: 1.73em;
+    height: 3em;
+    content: '';
+    top: 0;
+    right: 0;
+    background: linear-gradient(to left bottom, transparent 50%, rgba(0,0,0,.4) 0) no-repeat right top / 100% 100%;
+    transform: translateY(-1.3em) rotate(-30deg);
+    transform-origin: bottom right;
+}

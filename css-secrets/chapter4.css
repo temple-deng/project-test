@@ -1,0 +1,134 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+header {
+    width : 1000px;
+    height: 40px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 2px solid #eee;
+    border-radius: 20px;
+    line-height: 40px;
+}
+
+.main {
+    width: 1400px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 2px solid #eee;
+    border-radius: 20px;
+}
+
+.table {
+    width: 100%;
+    border: 2px solid #ccf;
+    border-radius: 15px;
+    border-collapse: collapse;
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.table td {
+    border: 1px solid #ccf;
+    vertical-align: middle;
+    padding: 20px;
+    width: 50%;
+}
+
+.table .specification {
+    text-align: left;
+    line-height: 1.4;
+}
+
+/* 插入断行 */
+.table1 .demo1 .effect {
+    width: 400px;
+    height: 200px;
+    display: inline-block;
+    border: 1px solid #eee;
+    font-size: 18px;
+    text-align: left;
+}
+
+.table1 .demo1 .effect dl dt,
+.table1 .demo1 .effect dl dd {
+    display: inline;
+}
+
+.table1 .demo1 .effect dl dd {
+    margin: 0;
+    font-weight: bold;
+}
+
+.table1 .demo1 .effect dl dd + dt::before {
+    content: '\A';
+    white-space: pre;
+}
+
+.table1 .demo1 .effect dl dd + dd::before {
+    content: ', ';
+    font-weight: normal;
+}
+
+/* 文本行的斑马条纹 */
+.table1 .demo2 .effect {
+    text-align: left;
+    width: 300px;
+    height: 180px;
+    display: inline-block;
+    border: 1px solid deeppink;
+    font-size: 18px;
+    padding: .5em;
+    line-height: 1.5;
+    background: linear-gradient(rgba(0,0,0,.2) 50%, transparent 0);
+    background-size: auto 3em;
+    background-origin: content-box;
+}
+
+/* 自定义下划线 */
+.table1 .demo3 .effect {
+    text-align: left;
+    width: 250px;
+    height: 200px;
+    display: inline-block;
+    border: 1px solid deeppink;
+    font-size: 22px;
+    line-height: 1.5;
+}
+
+.table1 .demo3 .effect span {
+    background: linear-gradient(grey, grey) no-repeat;
+    background-size: 100% 1px;
+    background-position: 0 1.15em;
+    text-shadow: .1em 0 white, -.1em 0 white;
+}
+
+
+/* 现实中的文字效果 */
+.table2 .demo1 .effect {
+    text-align: left;
+    width: 230px;
+    height: 200px;
+    display: inline-block;
+    border: 1px solid deeppink;
+    font-size: 22px;
+    line-height: 1.5;
+    background: hsl(210, 13%, 60%);
+    color : hsl(210, 13%, 30%);
+    text-shadow: 0 1px 1px hsla(0, 0%, 100%, .8);
+}
+
+.table2 .demo2 .effect {
+    text-align: left;
+    width: 230px;
+    height: 200px;
+    display: inline-block;
+    border: 1px solid deeppink;
+    font-size: 120px;
+    line-height: 1.5;
+    color: #ffffff;
+    background: deeppink;
+    text-shadow:2px 0 #000, -2px 0 #000, 0 2px #000, 0 -2px #000;
+}
+

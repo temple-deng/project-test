@@ -1,0 +1,268 @@
+header {
+    width : 1000px;
+    height: 40px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 2px solid #eee;
+    border-radius: 20px;
+    line-height: 40px;
+}
+
+.main {
+    width: 1400px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 2px solid #eee;
+    border-radius: 20px;
+}
+
+.main section {
+    margin :90px 20px;
+    border: 1px solid #ccf;
+}
+
+.effect-specification {
+    padding: 15px;
+}
+
+.effect-specification,
+.demo-box,
+.box {
+    border-bottom: 1px solid #ccf;
+}
+
+.demo-box .box:last-child {
+    border-bottom: none;
+}
+
+.demo-box .box {
+    overflow: hidden;
+    position: relative;
+}
+
+.demo-box .box::before {
+    content: '';
+    width: 0;
+    height: 100%;
+    border-right: 1px solid #ccf;
+    position: absolute;
+    top: 0;
+    left: 50%;
+}
+
+.demo-box .box .effect-wrap {
+    padding: 80px;
+    width: calc(50% - 161px);
+    height: calc(100% - 161px);
+    display: inline-block;
+    position: relative;
+}
+
+.demo-box .box .effect {
+    width: 300px;
+    height: 100px;
+    background: #69f;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.specification {
+    float: right;
+    width: 620px;
+    padding: 20px;
+}
+
+.specification > img {
+    max-width: 100%;
+}
+
+.attention-point {
+    padding: 20px;
+}
+
+/* 自适应椭圆 */
+.sec1 .box1 .effect {
+    background: #fb3;
+    width: 100px;
+    height: 100px;
+    border: 20px solid #eee;
+    border-radius: 70px;
+}
+
+.sec1 .box2 .effect {
+    background: #fb3;
+    width: 100px;
+    height: 100px;
+    border: 20px solid #eee;
+    border-radius: 100% 0 0 100% / 50%;
+}
+
+
+/* 平行四边形 */
+.sec2 .box .effect {
+    background: #fff;
+}
+
+.sec2 .box1 .effect .button {
+    display: inline-block;
+    padding: .5em 1em;
+    border: 0;
+    margin: .5em;
+    background: #58a;
+    color: white;
+    text-decoration: none;
+    font: bold 200%/1 sans-serif;
+    transform: skewX(-45deg);
+}
+
+.sec2 .box1 .effect .button > div {
+    transform: skewX(45deg);
+}
+
+.sec2 .box2 .button {
+    display: inline-block;
+    padding: .5em 1em;
+    border: 0;
+    margin: .5em;
+    color: white;
+    text-decoration: none;
+    font: bold 200%/1 sans-serif;
+    position: relative;
+}
+
+.sec2 .box2 .button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index:-1;
+    background: #58a;
+    transform: skewX(-45deg);
+}
+
+/*  菱形图片 */
+.sec3 .box {
+    height: 500px;
+}
+
+.sec3 .box .effect {
+    width: 400px;
+    height: 500px;
+    background: #fff;
+}
+
+.sec3 .box1 .effect .picture {
+    width: 400px;
+    margin-top: 50px;
+    transform: rotate(45deg);
+    overflow: hidden;
+}
+
+.sec3 .box1 .picture > img {
+    max-width: 100%;
+    transform: rotate(-45deg);
+}
+
+.sec3 .box2 .effect .picture {
+    margin-top: 100px;
+    margin-left: 70px;
+    width: 250px;
+    transform: rotate(45deg);
+    overflow: hidden;
+}
+
+.sec3 .box2 .effect .picture > img {
+    max-width: 100%;
+    transform: rotate(-45deg) scale(1.42);
+}
+
+.sec3 .box3 .picture {
+    margin-top: 50px;
+    width: 400px;
+    overflow: hidden;
+}
+
+.sec3 .box3 .effect .picture > img {
+    -webkit-clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+    clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+    transition: 1s -webkit-clip-path;
+}
+
+.sec3 .box3 .effect .picture > img:hover {
+    -webkit-clip-path : polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+/*切角效果*/
+.sec4 .box1 .effect {
+    color: #ffffff;
+    font-size: 20px;
+    background: #58a;
+    background: linear-gradient(-45deg, transparent 15px, #58a 0);
+}
+
+.sec4 .box2 .effect {
+    color: #ffffff;
+    font-size: 20px;
+    background: #58a;
+    background: linear-gradient(45deg, transparent 15px, #58a 0) left,
+                linear-gradient(-45deg, transparent 15px, #58a 0) right;
+    background-size: 50% 100%;
+    background-repeat: no-repeat;
+}
+
+.sec4 .box3 .effect {
+    color: #ffffff;
+    font-size: 20px;
+    background: #58a;
+    background: radial-gradient(circle at top left, transparent 15px, #58a 0) top left,
+                radial-gradient(circle at top right, transparent 15px, #58a 0) top right,
+                radial-gradient(circle at bottom right, transparent 15px, #58a 0) bottom right,
+                radial-gradient(circle at bottom left, transparent 15px, #58a 0) bottom left;
+    background-size: 50% 50%;
+    background-repeat: no-repeat;
+}
+
+.sec4 .box4 .effect {
+    color: #ffffff;
+    background: #58a;
+    background: url("source-images/7847424816_4432faffd5_n.jpg") left top no-repeat;
+    background-size: 100% 100%;
+    -webkit-clip-path: polygon(20px 0, calc(100% - 20px) 0, 100% 20px, 100% calc(100% - 20px),
+                       calc(100% - 20px) 100%, 20px 100%, 0 calc(100% - 20px), 0 20px);
+    transition: 1s -webkit-clip-path;
+}
+
+.sec4 .box4 .effect:hover {
+    -webkit-clip-path: polygon(0 0, 0 0, 100% 0, 100% 0,
+                        100% 100%, 100% 100%, 0 100%, 0 100%);
+}
+
+
+/* 梯形标签页 */
+.sec5 .box1 .effect {
+    background: transparent;
+}
+.sec5 .box1 .effect .tab {
+    position: relative;
+    display: inline-block;
+    padding: .5em 1em .35em;
+    color: #fff;
+    background: transparent;
+}
+
+.sec5 .box1 .effect .tab::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    content: '';
+    z-index: -1;
+    background: #58a;
+    transform: perspective(.5em) rotateX(5deg) scaleY(1.3);
+    transform-origin: bottom;
+}

@@ -1,0 +1,75 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+header {
+    width : 1000px;
+    height: 40px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 2px solid #eee;
+    border-radius: 20px;
+    line-height: 40px;
+}
+
+.main {
+    width: 1400px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 2px solid #eee;
+    border-radius: 20px;
+}
+
+.table {
+    width: 100%;
+    border: 2px solid #ccf;
+    border-radius: 15px;
+    border-collapse: collapse;
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.table td {
+    border: 1px solid #ccf;
+    vertical-align: middle;
+    padding: 20px;
+    width: 50%;
+}
+
+.table .specification {
+    text-align: left;
+    line-height: 1.4;
+}
+
+/* 自定义复选框 */
+.table1 .demo1 .effect {
+    width: 400px;
+    height: 200px;
+    display: inline-block;
+    border: 1px solid #eee;
+    font-size: 18px;
+    text-align: left;
+}
+
+.table1 .demo1 .effect input[type="checkbox"] + label::before {
+    content: '\a0'; /* 不换行空格 */
+    display: inline-block;
+    vertical-align: .2em;
+    width: .8em;
+    height: .8em;
+    margin-right: .2em;
+    border-radius: .2em;
+    background: silver;
+    text-indent: .15em;
+    line-height: .65;
+}
+
+.table1 .demo1 .effect input[type="checkbox"]:checked + label::before {
+    content: '\2713';
+    background: yellowgreen;
+}
+
+.table1 .demo1 .effect input[type="checkbox"] {
+    position: absolute;
+    clip: rect(0,0,0,0);
+}

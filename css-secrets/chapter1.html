@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>背景与边框</title>
+    <link rel="stylesheet" href="chapter1.css"/>
+</head>
+<body>
+    <header>
+        第一章：背景与边框
+    </header>
+
+    <div class="main">
+        <!----------------------第一个例子，半透明边框------------------------->
+        <section class="sec1">
+            <div class="effect-specification">
+                半透明边框，边框的颜色属性应该是接受任意CSS可以接受的颜色属性的，因此是可以透过rgba或者hsla设置边框的透明度的
+            </div>
+            <div class="demo-box">
+                <div class="box box1">
+
+                    <div class="effect-wrap">
+                        <div class="effect">
+                            <div>
+                                this box has a semi-transparent border
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="specification">
+                        border: 10px solid hsla(0, 0%, 100%, .5)
+                    </div>
+                </div>
+            </div>
+            <div class="attention-point">
+                当我们想让半透明边框的底色是父元素的背景时，可以通过设置background-clip属性值为padding-box
+            </div>
+        </section>
+
+        <!--------------------第二个例子，多重边框------------------------->
+        <section class="sec2">
+            <div class="effect-specification">
+                多重边框，两种方式，第一种是使用box-shadow的扩展半径，第二种是利用outline模拟边框。
+            </div>
+            <div class="demo-box">
+                <div class="box box1">
+                    <div class="effect-wrap">
+                        <div class="effect">
+                            <div>
+                                this box has multiple borders
+                            </div>
+                        </div>
+                    </div>
+                    <div class="specification">
+                        box-shadow:0 0 0 10px #655, <br/>
+                        0 0 0 15px deeppink, <br/>
+                        0 2px 5px 20px rgba(0,0,0, .6);
+                    </div>
+                </div>
+
+                <div class="box box2">
+                    <div class="effect-wrap">
+                        <div class="effect">
+                            <div>
+                                this box has a inset borders
+                            </div>
+                        </div>
+                    </div>
+                    <div class="specification">
+                        border: 10px solid #000; <br/>
+                        outline: 2px dashed white; <br/>
+                        outline-offset: -5px;
+                    </div>
+                </div>
+            </div>
+            <div class="attention-point">
+                如果我们只需要两层边框的话，可以通过outline属性来产生第二层的边框 <br/>
+                这种属性比较灵活，可以生成虚线边框。而且可以通过outline-offset属性来控制它的位置 <br/>
+                并且这个属性接受负值，意味着可以把这层边框设置到原边框之内，实现描边效果 <br/>
+                还有一个缺点就是这层边框无法贴合圆角，只能为矩形。<br/>
+                原生的多重边框的写法 border-top-colors 仅仅在 firefox中支持，且需要添加前缀，所以并没有实际意义。
+            </div>
+        </section>
+
+
+        <!--------------------第三个例子，灵活的背景位置------------------------->
+        <section class="sec3">
+            <div class="effect-specification">
+                针对容器的某个角对背景图片做偏移定位 。第一种方案，使用background-position 的扩展语法，允许指定背景图片距离任意角的偏移量，只要我们在偏移量前面指定关键字。<br/>
+                举例来说，如果想让背景图片跟右边缘保持20px的偏移量，同时跟底边保持10px的偏移量。如第一个例子所示。
+                第二种方案与第一种类似，只是不用关键字而是用calc()函数，如第二个例子所示。
+            </div>
+            <div class="demo-box">
+                <div class="box box1">
+                    <div class="effect-wrap">
+                        <div class="effect">
+                            <div>
+                                Code Pirate
+                            </div>
+                        </div>
+                    </div>
+                    <div class="specification">
+                        background: url("code-pirate.svg") no-repeat #58a; <br/>
+                        background-position: right 20px bottom 10px;
+                    </div>
+                </div>
+
+                <div class="box box2">
+                    <div class="effect-wrap">
+                        <div class="effect">
+                            <div>
+                                Code Pirate
+                            </div>
+                        </div>
+                    </div>
+                    <div class="specification">
+                        background: url("code-pirate.svg") no-repeat #58a; <br/>
+                        background-position: calc(100% - 20px) calc(100% - 10px);
+                    </div>
+                </div>
+            </div>
+            <div class="attention-point">
+                需要注意的点：首先，background-position的扩展预防并不是所有浏览器都支持，所以需要提供回退方案。其次，calc函数内部 + 和 - 的运算符两侧的空白符不可省略。
+            </div>
+        </section>
+
+        <!--------------------第四个例子，条纹背景------------------------->
+        <section class="sec4">
+            <div class="effect-specification">
+                条纹背景，使用线性渐变来实现，当多个色标具有相同的位置时，它们会产生一个无限小的过渡区域，过渡的起止色分别是第一个和最后一个指定值。从效果上看，颜色会在那个位置
+                突然变化。
+            </div>
+            <div class="demo-box">
+                <div class="box box1">
+                    <div class="effect-wrap">
+                        <div class="effect">
+                            <div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="specification">
+                        background: linear-gradient(#fb3 50%, #58a 50%);
+                    </div>
+                </div>
+
+                <div class="box box2">
+                    <div class="effect-wrap">
+                        <div class="effect">
+                            <div>
+                                原理上渐变时由代码生成的图像，因此可以像对待其他背景图像一样对待它，可以通过background-size来调整尺寸
+                            </div>
+                        </div>
+                    </div>
+                    <div class="specification">
+                        background: linear-gradient(#fb3 50%, #58a 50%); <br/>
+                        background-size: 100% 30px;
+                    </div>
+                </div>
+
+                <div class="box box3">
+                    <div class="effect-wrap">
+                        <div class="effect">
+                            <div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="specification">
+                        CSS3标准说明：如果某个色标的位置值比整个列表在它之前的色标的位置值都要小，则该色标的位置值会被设置为它前面所有色标位置值得最大值。<br/>
+                        background: linear-gradient(#fb3 33.3%,
+                        #58a 0, #58a 66.6%, yellowgreen 0);
+                        background-size: 100% 45px;
+                    </div>
+                </div>
+
+                <div class="box box4">
+                    <div class="effect-wrap">
+                        <div class="effect">
+                            <div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="specification">
+                        斜向条纹：渐变语法还有一种循环的语法repeating-linear-gradient()
+                        background: repeating-linear-gradient(60deg, #fb3, #fb3 15px, #58a 0, #58a 30px);
+                    </div>
+                </div>
+            </div>
+            <div class="attention-point">
+                需要注意的点：首先，background-position的扩展预防并不是所有浏览器都支持，所以需要提供回退方案。其次，calc函数内部 + 和 - 的运算符两侧的空白符不可省略。
+            </div>
+        </section>
+    </div>
+</body>
+</html>
