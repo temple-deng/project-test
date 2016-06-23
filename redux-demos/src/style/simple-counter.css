@@ -1,0 +1,19 @@
+#wrapper {
+  width: 500px;
+  height: 400px;
+  border: 1px solid #eee;
+  margin: 400px auto;
+}
+
+button {
+  background: yellowgreen;
+  padding: 10px;
+  border: none;
+  font-size: 18px;
+  margin-right: 20px;
+  outline: none;
+}
+
+.btn-line {
+  margin-top: 20px;
+}

@@ -5,7 +5,7 @@ var app = express();
 var fs = require("fs");
 var path = require("path");
 var bodyParser = require('body-parser');
-
+var open = require('open');
 
 app.use('/',express.static("./"));
 
@@ -91,4 +91,6 @@ function errorHandler(err, req, res, next){
 
 app.listen(8080,function(){
     console.log("Server star at port 8080");
+    open('http://localhost:8080', 'firefox');
 });
+
