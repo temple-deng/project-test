@@ -1,0 +1,16 @@
+{
+  "name": "generator-temple-project-generator",
+  "version": "0.1.0",
+  "description": "temple's project generator",
+  "files": [
+    "app",
+    "router"
+  ],
+  "keywords": [
+    "yeoman-generator"
+  ],
+  "dependencies": {
+    "yeoman-generator": "^0.23.4",
+    "yosay": "^1.2.0"
+  }
+}
