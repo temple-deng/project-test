@@ -7,16 +7,15 @@
 
 const path = require('path');
 
-const args = process.env.NODE_ENV;
+let env = process.env.NODE_ENV;
 
 // 支持两种环境 development: 开发环境 production: 线上环境
 var allowedEnvs = ['development', 'production'];
 
 
 // 设置环境
-var env;
-if (args.env) {
-  env = args.env;
+if (env) {
+  env = env;
 } else {
   env = 'development';     // 默认是dev环境
 }
